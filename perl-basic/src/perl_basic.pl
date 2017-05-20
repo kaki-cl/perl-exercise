@@ -6,21 +6,34 @@ use warnings;
 
 my @array = ("for shift!!", "2", "3", "4", "5");
 
-arg1(@array);
 
 my $str1 = 123;
 my $str2 = "ABC";
 my $str3 = "DEF";
 
-arg2($str1,$str2, $str3);
+#array_sub(@array);
+string_sub($str1);
 
-arg3(@array);
+
+#arg2($str1,$str2, $str3);
+#arg3(@array);
+#arg4($str2);
 
 
-sub arg1
+
+sub array_sub
 {
-	my $cnt = @_;
+    my $cnt = @_;
     print ("in arg1 cnt -> $cnt\n");
+}
+
+sub string_sub
+{
+    my $arg1 = shift ;
+#    my ($arg1) = @_;
+
+    print ("\$arg1 : " . $arg1 . "\n");
+
 }
 
 sub arg2
@@ -28,6 +41,7 @@ sub arg2
     my $cnt = @_;
     print ("in arg2 cnt -> $cnt\n");
 }
+
 
 
 sub arg3
@@ -45,6 +59,11 @@ sub arg3
 
 }
 
+sub arg4
+{
+    my $cnt = $_;
+    print ("in arg_for_scalar => $cnt\n");
 
+}
 
 
