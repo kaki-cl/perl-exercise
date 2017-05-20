@@ -1,8 +1,9 @@
 # hello.pl
 
-use MyModule::Foo;
+use lib './lib';
+use Foo;
 
-&MyModule::Foo::says; # MyModule::Foo はパッケージ名
+Foo::says; # MyModule::Foo はパッケージ名
 
 sub says {
   print "Hello, I am main!";
